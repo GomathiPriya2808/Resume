@@ -1,4 +1,4 @@
-<header class="bg-black text-white px-6 py-4 shadow-md sticky top-0 z-50">
+<header class="bg-black shadow-md px-6 py-4 sticky top-0 z-50">
   <div class="max-w-7xl mx-auto flex items-center justify-between">
     <div class="flex items-center gap-4">
       <button
@@ -9,249 +9,90 @@
       >
         <i class="fas fa-bars text-2xl"></i>
       </button>
-      <a routerLink="/menu">
-        <img src="Logo.png" alt="Babes Kitchen Logo" class="h-10" />
-      </a>
+      <div class="text-2xl font-bold text-blue-400">Gomathi Priya</div>
     </div>
-
-    <nav class="hidden md:flex space-x-6 text-sm font-medium">
-      <nav class="hidden md:flex space-x-6 text-sm font-medium">
-        <a routerLink="/home" class="hover:text-blue-400">Home</a>
-        <a routerLink="/cakes" class="hover:text-blue-400">Cakes</a>
-        <a routerLink="/meals" class="hover:text-blue-400">Meals</a>
-        <a routerLink="/cart" class="hover:text-blue-400">Cart</a>
-        <a routerLink="/checkout" class="hover:text-blue-400">Checkout</a>
-        <a routerLink="/contact" class="hover:text-blue-400">Contact</a>
-      </nav>
-    </nav>
-  </div>
+<div
+  class="fixed inset-0 z-40 md:hidden transition-transform duration-300 bg-black text-white w-2/3 max-w-xs h-full transform"
+  [class.translate-x-0]="menuOpen"
+  [class.-translate-x-full]="!menuOpen"
+>
 
   <div
-    class="fixed inset-0 z-40 md:hidden bg-black text-white w-2/3 max-w-xs h-full transform transition-transform duration-300"
-    [class.translate-x-0]="menuOpen"
-    [class.-translate-x-full]="!menuOpen"
+    *ngIf="menuOpen"
+    class="md:hidden bg-black px-6 py-4 space-y-3 text-white rounded shadow-md mt-2"
   >
-    <div class="px-6 py-4 space-y-4">
-      <button
-        type="button"
-        class="text-white text-right block ml-auto text-2xl"
-        (click)="closeMenu()"
-      >
-        ✕
-      </button>
-
-      <a
-        routerLink="/home"
-        (click)="closeMenu()"
-        class="block hover:text-blue-400"
-        >Home</a
-      >
-      <!-- <a
-        routerLink="/menu"
-        (click)="closeMenu()"
-        class="block hover:text-blue-400"
-        >Menu</a
-      > -->
-      <a
-        routerLink="/cakes"
-        (click)="closeMenu()"
-        class="block hover:text-blue-400"
-        >Cakes</a
-      >
-      <a
-        routerLink="/meals"
-        (click)="closeMenu()"
-        class="block hover:text-blue-400"
-        >Meals</a
-      >
-      <a
-        routerLink="/cart"
-        (click)="closeMenu()"
-        class="block hover:text-blue-400"
-        >Cart</a
-      >
-      <a
-        routerLink="/checkout"
-        (click)="closeMenu()"
-        class="block hover:text-blue-400"
-        >Checkout</a
-      >
-      <a
-        routerLink="/contact"
-        (click)="closeMenu()"
-        class="block hover:text-blue-400"
-        >Contact</a
-      >
-    </div>
+    <a routerLink="/" (click)="closeMenu()" class="block hover:text-blue-400">Home</a>
+    <a routerLink="/about" (click)="closeMenu()" class="block hover:text-blue-400">About</a>
+    <a routerLink="/skills" (click)="closeMenu()" class="block hover:text-blue-400">Skills</a>
+    <a routerLink="/work" (click)="closeMenu()" class="block hover:text-blue-400">Work</a>
+    <a routerLink="/career" (click)="closeMenu()" class="block hover:text-blue-400">Career</a>
+    <a routerLink="/contact" (click)="closeMenu()" class="block hover:text-blue-400">Contact</a>
+  </div>
+</div>
   </div>
 </header>
 
-<section
-  class="text-white bg-gradient-to-b from-black to-gray-900 py-20 px-6 text-center"
->
-  <h1 class="text-4xl md:text-6xl font-bold mb-4">
-    Welcome to <span class="text-blue-400">Babes Kitchen</span>
-  </h1>
-  <p class="text-lg md:text-xl text-gray-300 mb-6 max-w-xl mx-auto">
-    Delicious meals and freshly baked cakes made with love — delivered to your
-    door.
-  </p>
-  <a
-    routerLink="/menu"
-    class="inline-block bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-3 rounded-lg transition duration-300"
-  >
-    Explore Our Menu
+
+<section class="bg-gradient-to-br from-[#0f1117] via-[#12141c] to-[#0f1117] text-white px-6 py-16 md:px-20 min-h-screen">
+  <div class="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-10">
+
+    <div class="flex-1 space-y-6 text-center md:text-left">
+      <h1 class="text-4xl md:text-5xl font-bold leading-tight">
+        Hi, I'm <span class="text-cyan-400">Gomathi Priya</span>
+      </h1>
+      <h2 class="text-xl text-purple-400 font-semibold">Angular & Firebase Developer</h2>
+      <p class="text-gray-300 leading-relaxed">
+        A self-taught front-end developer passionate about building fast,
+        modern, and accessible web apps using Angular, Firebase, and Tailwind CSS.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
+        <a href="mailto:2000gomathipriya@gmail.com" class="flex items-center gap-2 text-white hover:text-cyan-400">
+          <i class="fas fa-envelope text-cyan-400"></i>
+          2000gomathipriya&#64;gmail.com
+        </a>
+        <a href="tel:+919342253034" class="flex items-center bg-gray-800 px-2 py-2 rounded hover:bg-cyan-700 transition">
+          <i class="fas fa-phone text-cyan-400"></i> +91 93422 53034
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4 pt-4">
+        <a
+          href="Gomu Resume Jun28.pdf"
+          download
+          class="bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold px-4 py-2 rounded shadow hover:opacity-90 transition text-center"
+        >
+          <i class="fas fa-download mr-2"></i> Download CV
+        </a>
+
+        <a
+          routerLink="/contact"
+          class="bg-gray-800 text-white px-4 py-2 rounded font-medium hover:bg-blue-600 transition text-center"
+        >
+          <i class="fas fa-paper-plane mr-2"></i> Let’s Connect
+        </a>
+      </div>
+
+    <div class="flex gap-4 pt-6 justify-center">
+  <a href="mailto:2000gomathipriya@gmail.com" class="hover:text-cyan-400">
+    <i class="fas fa-envelope fa-lg"></i>
   </a>
-</section>
+  <a href="https://www.linkedin.com/in/gomathi-priya-1a9579233/" class="hover:text-cyan-400">
+    <i class="fab fa-linkedin-in fa-lg"></i>
+  </a>
+  <a href="https://github.com/gomathipriyasoftware" class="hover:text-cyan-400">
+    <i class="fab fa-github fa-lg"></i>
+  </a>
+</div>
 
-<section class="bg-white text-black py-16 px-6 text-center">
-  <h2 class="text-3xl md:text-4xl font-bold mb-12">
-    Why Choose Babes Kitchen?
-  </h2>
-
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-    <div
-      class="p-6 bg-gray-100 shadow-lg rounded-lg transition-transform duration-300 hover:-translate-y-2"
-    >
-      <h3 class="text-xl font-semibold mb-2">🍽️ Homemade Taste</h3>
-      <p class="text-gray-700">
-        Enjoy a variety of homemade food and cakes prepared with care and
-        tradition.
-      </p>
     </div>
 
-    <div
-      class="p-6 bg-gray-100 shadow-lg rounded-lg transition-transform duration-300 hover:-translate-y-2"
-    >
-      <h3 class="text-xl font-semibold mb-2">🎂 Customization</h3>
-      <p class="text-gray-700">
-        Get custom-designed cakes and meals tailored for every occasion and
-        taste.
-      </p>
-    </div>
-
-    <div
-      class="p-6 bg-gray-100 shadow-lg rounded-lg transition-transform duration-300 hover:-translate-y-2"
-    >
-      <h3 class="text-xl font-semibold mb-2">🚚 Fast & Fresh Delivery</h3>
-      <p class="text-gray-700">
-        Prompt delivery to your doorstep — always fresh, always flavorful.
-      </p>
-    </div>
-  </div>
-</section>
-<section class="bg-gray-900 text-white py-20 px-6">
-  <h2 class="text-3xl md:text-4xl font-bold mb-10 text-center">
-    Featured Cakes
-  </h2>
-  <div
-    class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-8 max-w-7xl mx-auto"
-  >
-    <div class="bg-gray-800 p-4 rounded-xl shadow hover:shadow-xl transition">
+    <div class="flex-1 flex justify-center">
       <img
-        src="Photocake.png"
-        alt="Chocolate Truffle"
-        class="w-full h-48 object-cover rounded-md mb-4"
+        src="Gomathi (1) (2).png"
+        alt="Gomathi Priya"
+        class="w-40 h-40 sm:w-48 sm:h-48 md:w-60 md:h-60 rounded-full border-4 border-cyan-400 shadow-xl object-cover"
       />
-      <h3 class="text-xl font-semibold">Chocolate Truffle</h3>
-      <p class="text-pink-400 font-bold">Rs. 450</p>
     </div>
-    <div class="bg-gray-800 p-4 rounded-xl shadow hover:shadow-xl transition">
-      <img
-        src="Lovecake.png"
-        alt="Strawberry Cream"
-        class="w-full h-48 object-cover rounded-md mb-4"
-      />
-      <h3 class="text-xl font-semibold">Strawberry Cream</h3>
-      <p class="text-pink-400 font-bold">Rs. 480</p>
-    </div>
-    <div class="bg-gray-800 p-4 rounded-xl shadow hover:shadow-xl transition">
-      <img
-        src="chocolatecake.png"
-        alt="Vanilla Choco Swirl"
-        class="w-full h-48 object-cover rounded-md mb-4"
-      />
-      <h3 class="text-xl font-semibold">Vanilla Choco Swirl</h3>
-      <p class="text-pink-400 font-bold">Rs. 420</p>
-    </div>
-    <div class="bg-gray-800 p-4 rounded-xl shadow hover:shadow-xl transition">
-      <img
-        src="creativecake.png"
-        alt="Black Forest"
-        class="w-full h-48 object-cover rounded-md mb-4"
-      />
-      <h3 class="text-xl font-semibold">Black Forest</h3>
-      <p class="text-pink-400 font-bold">Rs. 460</p>
-    </div>
-    <div class="bg-gray-800 p-4 rounded-xl shadow hover:shadow-xl transition">
-      <img
-        src="DesignerCake.png"
-        alt="Black Forest"
-        class="w-full h-48 object-cover rounded-md mb-4"
-      />
-      <h3 class="text-xl font-semibold">Black Forest</h3>
-      <p class="text-pink-400 font-bold">Rs. 460</p>
-    </div>
-    <div class="bg-gray-800 p-4 rounded-xl shadow hover:shadow-xl transition">
-      <img
-        src="RoseCakeImage.png"
-        alt="Black Forest"
-        class="w-full h-48 object-cover rounded-md mb-4"
-      />
-      <h3 class="text-xl font-semibold">Black Forest</h3>
-      <p class="text-pink-400 font-bold">Rs. 460</p>
-    </div>
-  </div>
-</section>
-<section class="bg-white text-black py-16 px-6 text-center">
-  <h2 class="text-3xl md:text-4xl font-bold mb-8">Join Our Baking Classes</h2>
-  <p class="text-gray-600 max-w-2xl mx-auto mb-6">
-    Learn to bake like a pro! We offer hands-on classes for all age groups:
-  </p>
-  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto text-left">
-    <div class="p-6 bg-gray-100 rounded-lg shadow-md">
-      <h3 class="text-xl font-bold mb-2">🍰 Beginner Baking</h3>
-      <p>Perfect for newcomers! Learn sponge cakes, cupcakes, and icing basics.</p>
-    </div>
-    <div class="p-6 bg-gray-100 rounded-lg shadow-md">
-      <h3 class="text-xl font-bold mb-2">🎂 Cake Decoration</h3>
-      <p>Learn to frost, layer, and decorate cakes professionally.</p>
-    </div>
-    <div class="p-6 bg-gray-100 rounded-lg shadow-md">
-      <h3 class="text-xl font-bold mb-2">👩‍🍳 Kids' Workshop</h3>
-      <p>Fun-filled baking sessions for kids aged 6–12 with take-home treats!</p>
-    </div>
-  </div>
-</section>
-
-<section class="bg-blue-50 text-black py-20 px-6 text-center">
-  <h2 class="text-3xl md:text-4xl font-bold mb-8">Our Contact</h2>
-  <p class="text-gray-600 max-w-xl mx-auto mb-6">
-    Discover our freshly baked cakes available for purchase and join our
-    hands-on baking classes to learn the art of cake-making from experts.
-  </p>
-  <form class="flex flex-col sm:flex-row justify-center items-center gap-4 max-w-xl mx-auto mb-8">
-    <input
-      type="email"
-      placeholder="Enter your email"
-      class="px-4 py-2 rounded-md border border-gray-300 w-full sm:w-2/3"
-    />
-    <button
-      type="submit"
-      class="bg-blue-500 hover:bg-blue-600 text-white font-semibold px-6 py-2 rounded-md transition"
-    >
-      Send Feedback
-    </button>
-  </form>
-  <div class="max-w-xl mx-auto space-y-2">
-    <p class="text-lg">
-      <strong>Email:</strong>
-      <a href="mailto:gokilavaniraju01@gmail.com" class="text-blue-500 hover:underline">
-        gokilavaniraju01&#64;gmail.com
-      </a>
-    </p>
-    <p class="text-lg">
-      <strong>Contact No:</strong> <span>8754999909</span>
-    </p>
   </div>
 </section>
